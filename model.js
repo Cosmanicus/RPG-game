@@ -1,70 +1,68 @@
-appdiv = document.getElementById('app')
-
-// All biomes
-biomes = [
-    plains
-]
-
-// #region Arrays for plains biome
-plains = [plainsMonsters, plainsAnimals, plainsloot, plainsTreasures]
-plainsMonsters = [slime, skeletonArcher, wolf];
-plainsAnimals = [cow, sheep, pig]
-plainsLoot = []
-plainsTreasures = []
-// #endregion
-
+const appdiv = document.getElementById('app');
+let rndIndex = null;
 
 // This is the players base stats
 let player = {
+    name: "Player",
     health: 2,
     damage: 1,
-    gold: 5
+    gold: 5,
+    inventory: []
 }
 
-// #region Stats for plains monsters
+// #region Stats for mobs
 let slime = {
+    name: "Slime",
     health: 2,
     diceRoll: 3,
     damage: 1,
-    loot: [gold, slimeBall],
+    loot: [],
     experience: 3
 }
 let skeletonArcher = {
+    name: "Skeleton Archer",
     health: 2,
     diceRoll: 4,
     damage: 1,
-    loot: [gold, bone],
+    loot: [],
     experience: 6
 }
 let wolf = {
+    name: "Wolf",
     health: 2,
     diceRoll: 2,
     damage: 2,
-    loot: [bone],
+    loot: [],
     experience: 4
 }
-// #endregion
-// #region Stats for plains animals
 let cow = {
+    name: "Cow",
     health: 4,
     diceRoll: 2,
     damage: 0,
-    loot: [leather, meat],
+    loot: [],
     experience: 1
 }
 let sheep = {
+    name: "Sheep",
     health: 3,
     diceRoll: 2,
     damage: 0,
-    loot: [wool, meat],
+    loot: [],
     experience: 1
 }
 let pig = {
+    name: "Pig",
     health: 2,
     diceRoll: 2,
     damage: 0,
-    loot: [meat],
+    loot: [],
     experience: 1
 }
 // #endregion
 
+// #region Arrays for what can spawn
+const mobs = [slime, skeletonArcher, wolf, cow, sheep, pig];
+const loot = [];
+const treasures = [];
+// #endregion
